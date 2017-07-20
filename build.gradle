@@ -1,0 +1,57 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['/']
+            exclude 'test/**'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+       dirs 'lib'
+   }
+}
+
+configurations {
+    // configuration that holds jars to include in the jar
+    extraLibs
+}
+
+dependencies {
+	extraLibs group: 'com.db4o', name: 'db4o-8.0', version: '8.0'
+	extraLibs group: 'org.apache', name: 'log4j', version: '1.0'
+	configurations.compile.extendsFrom(configurations.extraLibs)
+}
+
+task releaseClient(type: Jar){
+	dependsOn compileJava
+	manifest {
+    	attributes 'Main-Class': 'fr.triedge.sekai.client.RunClient'
+    }
+    baseName='SekaiClient'
+    from sourceSets.main.output.classesDir
+    include 'fr\\triedge\\sekai\\client\\**'
+    include 'fr\\triedge\\sekai\\common\\**'
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+} 
+
+task releaseServer(type: Jar){
+	dependsOn compileJava
+	manifest {
+    	attributes 'Main-Class': 'fr.triedge.sekai.server.RunServer'
+    }
+	baseName='SekaiServer'
+	from sourceSets.main.output.classesDir
+    include 'fr\\triedge\\sekai\\server\\**'
+	include 'fr\\triedge\\sekai\\common\\**'
+    from configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+}
+
+task releaseALL(type: Jar){
+	dependsOn releaseClient
+	dependsOn releaseServer
+}
