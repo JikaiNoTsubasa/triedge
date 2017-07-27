@@ -1,5 +1,6 @@
 package fr.triedge.sekai.server.controller;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -7,13 +8,17 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import fr.triedge.sekai.common.model.Config;
+
 public class Controller {
 	
 	static final Logger log = Logger.getLogger(Controller.class);
 	
-	private Database database;
+	private DB4O database;
+	private ConnectionListener connectionListener;
 	
-	public static final String DEFAULT_DB_PATH				= "server/data/Sekai.db";
+	public static final String DEFAULT_CONF_PATH				= "server/config/server.properties";
+	public static final String DEFAULT_DB_PATH					= "server/data/Sekai.db";
 	
 	public void init(){
 		setupLog4j();
@@ -26,14 +31,33 @@ public class Controller {
 		initDatabase();
 		log.info("Database loaded");
 		
+		log.info("Starting Connection Listener...");
+		initConnectionListener();
+		
+		
 		log.info("Server Done");
 		
 		log.debug("END: init()");
 	}
 	
+	private void initConnectionListener() {
+		log.debug("START: initConnectionListener()");
+		connectionListener = new ConnectionListener(this);
+		Thread th = new Thread(connectionListener, "ConnectionListener");
+		th.start();
+		log.debug("END: initConnectionListener()");
+	}
+
 	private void initConfig(){
 		// Load config file
 		log.debug("START: initConfig()");
+		Properties prop = new Properties();
+		try {
+			prop.load(new FileInputStream(new File(DEFAULT_CONF_PATH)));
+			Config.param = prop;
+		} catch (IOException e) {
+			log.error("Cannot load properties file "+DEFAULT_CONF_PATH,e);
+		}
 		
 		log.debug("END: initConfig()");
 	}
@@ -41,7 +65,7 @@ public class Controller {
 	private void initDatabase(){
 		// Load database
 		log.debug("START: initDatabase()");
-		setDatabase(new Database());
+		setDatabase(new DB4O());
 		getDatabase().open(DEFAULT_DB_PATH);
 		log.debug("END: initDatabase()");
 	}
@@ -64,11 +88,11 @@ public class Controller {
 		}
 	}
 
-	public Database getDatabase() {
+	public DB4O getDatabase() {
 		return database;
 	}
 
-	public void setDatabase(Database database) {
+	public void setDatabase(DB4O database) {
 		this.database = database;
 	}
 }

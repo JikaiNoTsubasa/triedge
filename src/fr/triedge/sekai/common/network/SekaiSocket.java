@@ -22,4 +22,21 @@ public class SekaiSocket {
 	public void setInSocket(Socket inSocket) {
 		this.inSocket = inSocket;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("IN: ");
+		builder.append(inSocket.getInetAddress().getHostName());
+		builder.append(":");
+		builder.append(inSocket.getPort());
+		builder.append(" - ");
+		builder.append("OUT: ");
+		builder.append(outSocket.getInetAddress().getHostName());
+		builder.append(":");
+		builder.append(outSocket.getPort());
+		return builder.toString();
+	}
+	
+	
 }

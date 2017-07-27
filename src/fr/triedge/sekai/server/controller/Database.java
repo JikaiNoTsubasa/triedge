@@ -1,17 +1,15 @@
 package fr.triedge.sekai.server.controller;
 
-import com.db4o.Db4oEmbedded;
-import com.db4o.ObjectContainer;
+import fr.triedge.sekai.common.model.User;
 
-public class Database {
-	
-	protected ObjectContainer db;
+public interface Database {
 
-	public void open(String path){
-		db = Db4oEmbedded.openFile(path);
-	}
-	
-	public void close(){
-		db.close();
-	}
+	public boolean userExists(String username, String password);
+	public boolean createUser(String username, String password);
+	public boolean createCharact(User user, String username);
+	public int getLastIdUser();
+	public int getLastIdCharact();
+	public User getUser(String username, String password);
+	public void open(String path);
+	public void close();
 }

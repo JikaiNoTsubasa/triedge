@@ -8,7 +8,7 @@ public class RunClient {
 	public static void main(String[] args) {
 		Controller client = new Controller();
 		client.init();
-		client.startLoop();
+		//client.startLoop();
 	}
 
 }

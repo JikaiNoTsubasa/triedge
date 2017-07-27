@@ -1,6 +1,5 @@
 package fr.triedge.sekai.common.network;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -15,6 +14,16 @@ public class SekaiMessageFactory {
 	public static SekaiMessage createMesLoginFailed(HashMap<String, String> params){
 		return new SekaiMessage(SekaiProtocol.SERVER_RESPOND_LOGIN_NOK);
 	}
+	
+	// S2C
+		public static SekaiMessage createMesCreateUserSuccessful(HashMap<String, String> params){
+			return new SekaiMessage(SekaiProtocol.SERVER_RESPOND_CREATE_USER_OK);
+		}
+		
+		// S2C
+		public static SekaiMessage createMesCreateUserFailed(HashMap<String, String> params){
+			return new SekaiMessage(SekaiProtocol.SERVER_RESPOND_CREATE_USER_NOK);
+		}
 	
 	// S2C
 	/*
@@ -32,7 +41,12 @@ public class SekaiMessageFactory {
 	public static SekaiMessage createMesAskLoginToServer(String user, String password){
 		return new SekaiMessage(SekaiProtocol.CLIENT_ASK_LOGIN).append("login", user).append("password", password);
 	}
-	
+
+	// C2S
+	public static SekaiMessage createMesAskCreateUserToServer(String user, String password){
+		return new SekaiMessage(SekaiProtocol.CLIENT_ASK_CREATE_USER).append("login", user).append("password", password);
+	}
+
 	// C2S
 	public static SekaiMessage createMesReplyCharacterSelectionToServer(String name){
 		return new SekaiMessage(SekaiProtocol.CLIENT_RESPOND_CHARACTER_SELECTION).append("character", name);

@@ -3,7 +3,9 @@ package fr.triedge.sekai.common.model;
 public class User {
 
 	private String name, password;
-	private int id;
+	public int id;
+	private Charact charact;
+	
 	public String getPassword() {
 		return password;
 	}
@@ -21,5 +23,11 @@ public class User {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public Charact getCharact() {
+		return charact;
+	}
+	public void setCharact(Charact charact) {
+		this.charact = charact;
 	}
 }

@@ -3,3 +3,200 @@
 2017-05-10 17:33:59 INFO  Controller:20 - Initiate Server...
 2017-05-10 17:34:22 INFO  Controller:20 - Initiate Server...
 2017-05-10 17:34:22 INFO  Controller:24 - Server Done
+2017-07-27 14:18:22 INFO  Controller:26 - Starting Server...
+2017-07-27 14:18:22 INFO  Controller:28 - Configuration loaded
+2017-07-27 14:18:22 INFO  Controller:31 - Database loaded
+2017-07-27 14:18:22 INFO  Controller:33 - Server Done
+2017-07-27 14:22:14 INFO  Controller:27 - Starting Server...
+2017-07-27 14:22:14 INFO  Controller:29 - Configuration loaded
+2017-07-27 14:22:14 INFO  Controller:32 - Database loaded
+2017-07-27 14:22:14 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 14:22:14 INFO  Controller:38 - Server Done
+2017-07-27 14:22:14 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 14:27:35 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63288 - OUT: 127.0.0.1:2008
+2017-07-27 14:27:35 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 14:27:35 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 14:38:45 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63341 - OUT: 127.0.0.1:2008
+2017-07-27 14:38:45 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 14:38:45 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 14:42:44 INFO  Controller:27 - Starting Server...
+2017-07-27 14:42:44 INFO  Controller:29 - Configuration loaded
+2017-07-27 14:42:45 INFO  Controller:32 - Database loaded
+2017-07-27 14:42:45 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 14:42:45 INFO  Controller:38 - Server Done
+2017-07-27 14:42:45 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:04:27 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63642 - OUT: 127.0.0.1:2008
+2017-07-27 15:04:27 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:04:27 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:27:41 INFO  Controller:27 - Starting Server...
+2017-07-27 15:27:41 INFO  Controller:29 - Configuration loaded
+2017-07-27 15:27:42 INFO  Controller:32 - Database loaded
+2017-07-27 15:27:42 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 15:27:42 INFO  Controller:38 - Server Done
+2017-07-27 15:27:42 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:27:46 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63805 - OUT: 127.0.0.1:2008
+2017-07-27 15:27:46 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:27:46 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:29:29 INFO  Controller:27 - Starting Server...
+2017-07-27 15:29:29 INFO  Controller:29 - Configuration loaded
+2017-07-27 15:29:29 INFO  Controller:32 - Database loaded
+2017-07-27 15:29:29 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 15:29:29 INFO  Controller:38 - Server Done
+2017-07-27 15:29:29 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:29:31 INFO  Controller:27 - Starting Server...
+2017-07-27 15:29:31 INFO  Controller:29 - Configuration loaded
+2017-07-27 15:29:37 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63814 - OUT: 127.0.0.1:2008
+2017-07-27 15:29:37 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:29:37 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:31:43 INFO  Controller:27 - Starting Server...
+2017-07-27 15:31:43 INFO  Controller:29 - Configuration loaded
+2017-07-27 15:31:44 INFO  Controller:32 - Database loaded
+2017-07-27 15:31:44 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 15:31:44 INFO  Controller:38 - Server Done
+2017-07-27 15:31:44 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:31:45 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63828 - OUT: 127.0.0.1:2008
+2017-07-27 15:31:45 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:31:45 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:33:58 DEBUG Controller:25 - START: init()
+2017-07-27 15:33:58 INFO  Controller:27 - Starting Server...
+2017-07-27 15:33:58 DEBUG Controller:53 - START: initConfig()
+2017-07-27 15:33:58 DEBUG Controller:62 - END: initConfig()
+2017-07-27 15:33:58 INFO  Controller:29 - Configuration loaded
+2017-07-27 15:33:58 DEBUG Controller:67 - START: initDatabase()
+2017-07-27 15:33:58 DEBUG Controller:70 - END: initDatabase()
+2017-07-27 15:33:58 INFO  Controller:32 - Database loaded
+2017-07-27 15:33:58 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 15:33:58 DEBUG Controller:44 - START: initConnectionListener()
+2017-07-27 15:33:58 DEBUG Controller:48 - END: initConnectionListener()
+2017-07-27 15:33:58 DEBUG ConnectionListener:39 - START: run()
+2017-07-27 15:33:58 INFO  Controller:38 - Server Done
+2017-07-27 15:33:58 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:33:58 DEBUG Controller:40 - END: init()
+2017-07-27 15:34:08 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63840 - OUT: 127.0.0.1:2008
+2017-07-27 15:34:08 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:34:08 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:34:08 DEBUG ConnectionListener:26 - START: run()
+2017-07-27 15:34:08 INFO  ConnectionListener:29 - Waiting for user username/password...
+2017-07-27 15:34:19 DEBUG ConnectionListener:48 - Trying create user: test
+2017-07-27 15:39:48 DEBUG Controller:25 - START: init()
+2017-07-27 15:39:48 INFO  Controller:27 - Starting Server...
+2017-07-27 15:39:48 DEBUG Controller:53 - START: initConfig()
+2017-07-27 15:39:48 DEBUG Controller:62 - END: initConfig()
+2017-07-27 15:39:48 INFO  Controller:29 - Configuration loaded
+2017-07-27 15:39:48 DEBUG Controller:67 - START: initDatabase()
+2017-07-27 15:39:48 DEBUG Controller:70 - END: initDatabase()
+2017-07-27 15:39:48 INFO  Controller:32 - Database loaded
+2017-07-27 15:39:48 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 15:39:48 DEBUG Controller:44 - START: initConnectionListener()
+2017-07-27 15:39:48 DEBUG Controller:48 - END: initConnectionListener()
+2017-07-27 15:39:48 DEBUG ConnectionListener:39 - START: run()
+2017-07-27 15:39:48 INFO  Controller:38 - Server Done
+2017-07-27 15:39:48 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:39:48 DEBUG Controller:40 - END: init()
+2017-07-27 15:39:51 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63872 - OUT: 127.0.0.1:2008
+2017-07-27 15:39:51 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:39:51 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:39:51 DEBUG ConnectionListener:26 - START: run()
+2017-07-27 15:39:51 INFO  ConnectionListener:29 - Waiting for user username/password...
+2017-07-27 15:39:57 DEBUG ConnectionListener:48 - Trying create user: test
+2017-07-27 15:39:57 DEBUG ConnectionListener:53 - User created: test
+2017-07-27 15:39:57 DEBUG ConnectionListener:65 - END: run()
+2017-07-27 15:40:23 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:63875 - OUT: 127.0.0.1:2008
+2017-07-27 15:40:23 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 15:40:23 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 15:40:23 DEBUG ConnectionListener:26 - START: run()
+2017-07-27 15:40:23 INFO  ConnectionListener:29 - Waiting for user username/password...
+2017-07-27 15:40:28 DEBUG ConnectionListener:34 - Trying to login with user: test
+2017-07-27 15:40:28 DEBUG ConnectionListener:39 - Login successful: test
+2017-07-27 15:40:28 DEBUG ConnectionListener:65 - END: run()
+2017-07-27 16:28:08 DEBUG Controller:25 - START: init()
+2017-07-27 16:28:08 INFO  Controller:27 - Starting Server...
+2017-07-27 16:28:08 DEBUG Controller:53 - START: initConfig()
+2017-07-27 16:28:08 DEBUG Controller:62 - END: initConfig()
+2017-07-27 16:28:08 INFO  Controller:29 - Configuration loaded
+2017-07-27 16:28:08 DEBUG Controller:67 - START: initDatabase()
+2017-07-27 16:28:09 DEBUG Controller:70 - END: initDatabase()
+2017-07-27 16:28:09 INFO  Controller:32 - Database loaded
+2017-07-27 16:28:09 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 16:28:09 DEBUG Controller:44 - START: initConnectionListener()
+2017-07-27 16:28:09 DEBUG Controller:48 - END: initConnectionListener()
+2017-07-27 16:28:09 DEBUG ConnectionListener:39 - START: run()
+2017-07-27 16:28:09 INFO  Controller:38 - Server Done
+2017-07-27 16:28:09 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:28:09 DEBUG Controller:40 - END: init()
+2017-07-27 16:28:37 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:64372 - OUT: 127.0.0.1:2008
+2017-07-27 16:28:37 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 16:28:37 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:28:37 DEBUG ConnectionListener:27 - START: run()
+2017-07-27 16:28:37 INFO  ConnectionListener:31 - Waiting for user username/password...
+2017-07-27 16:28:42 DEBUG ConnectionListener:36 - Trying to login with user: test
+2017-07-27 16:28:42 DEBUG ConnectionListener:44 - Login failed: test
+2017-07-27 16:28:42 DEBUG ConnectionListener:70 - END: run()
+2017-07-27 16:30:30 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:64384 - OUT: 127.0.0.1:2008
+2017-07-27 16:30:30 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 16:30:30 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:30:30 DEBUG ConnectionListener:27 - START: run()
+2017-07-27 16:30:30 INFO  ConnectionListener:31 - Waiting for user username/password...
+2017-07-27 16:30:36 DEBUG ConnectionListener:51 - Trying create user: test
+2017-07-27 16:30:36 DEBUG ConnectionListener:56 - User created: test
+2017-07-27 16:30:36 INFO  ConnectionListener:31 - Waiting for user username/password...
+2017-07-27 16:30:40 DEBUG ConnectionListener:36 - Trying to login with user: test
+2017-07-27 16:30:40 DEBUG ConnectionListener:41 - Login successful: test
+2017-07-27 16:30:40 DEBUG ConnectionListener:70 - END: run()
+2017-07-27 16:31:41 DEBUG Controller:25 - START: init()
+2017-07-27 16:31:41 INFO  Controller:27 - Starting Server...
+2017-07-27 16:31:41 DEBUG Controller:53 - START: initConfig()
+2017-07-27 16:31:41 DEBUG Controller:62 - END: initConfig()
+2017-07-27 16:31:41 INFO  Controller:29 - Configuration loaded
+2017-07-27 16:31:41 DEBUG Controller:67 - START: initDatabase()
+2017-07-27 16:31:42 DEBUG Controller:70 - END: initDatabase()
+2017-07-27 16:31:42 INFO  Controller:32 - Database loaded
+2017-07-27 16:31:42 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 16:31:42 DEBUG Controller:44 - START: initConnectionListener()
+2017-07-27 16:31:42 DEBUG Controller:48 - END: initConnectionListener()
+2017-07-27 16:31:42 DEBUG ConnectionListener:39 - START: run()
+2017-07-27 16:31:42 INFO  Controller:38 - Server Done
+2017-07-27 16:31:42 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:31:42 DEBUG Controller:40 - END: init()
+2017-07-27 16:31:43 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:64395 - OUT: 127.0.0.1:2008
+2017-07-27 16:31:43 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 16:31:43 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:31:43 DEBUG LoginManager:27 - START: run()
+2017-07-27 16:31:43 INFO  LoginManager:31 - Waiting for user username/password...
+2017-07-27 16:31:50 DEBUG LoginManager:36 - Trying to login with user: test
+2017-07-27 16:31:50 DEBUG LoginManager:44 - Login failed: test
+2017-07-27 16:31:50 DEBUG LoginManager:70 - END: run()
+2017-07-27 16:32:06 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:64398 - OUT: 127.0.0.1:2008
+2017-07-27 16:32:06 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 16:32:06 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:32:06 DEBUG LoginManager:27 - START: run()
+2017-07-27 16:32:06 INFO  LoginManager:31 - Waiting for user username/password...
+2017-07-27 16:32:13 DEBUG LoginManager:51 - Trying create user: test
+2017-07-27 16:32:13 DEBUG LoginManager:56 - User created: test
+2017-07-27 16:32:13 INFO  LoginManager:31 - Waiting for user username/password...
+2017-07-27 16:32:22 DEBUG LoginManager:36 - Trying to login with user: test
+2017-07-27 16:32:22 DEBUG LoginManager:41 - Login successful: test
+2017-07-27 16:32:22 DEBUG LoginManager:70 - END: run()
+2017-07-27 16:32:33 DEBUG Controller:25 - START: init()
+2017-07-27 16:32:33 INFO  Controller:27 - Starting Server...
+2017-07-27 16:32:33 DEBUG Controller:53 - START: initConfig()
+2017-07-27 16:32:33 DEBUG Controller:62 - END: initConfig()
+2017-07-27 16:32:33 INFO  Controller:29 - Configuration loaded
+2017-07-27 16:32:33 DEBUG Controller:67 - START: initDatabase()
+2017-07-27 16:32:33 DEBUG Controller:70 - END: initDatabase()
+2017-07-27 16:32:33 INFO  Controller:32 - Database loaded
+2017-07-27 16:32:33 INFO  Controller:34 - Starting Connection Listener...
+2017-07-27 16:32:33 DEBUG Controller:44 - START: initConnectionListener()
+2017-07-27 16:32:33 DEBUG Controller:48 - END: initConnectionListener()
+2017-07-27 16:32:33 DEBUG ConnectionListener:39 - START: run()
+2017-07-27 16:32:33 INFO  Controller:38 - Server Done
+2017-07-27 16:32:33 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:32:33 DEBUG Controller:40 - END: init()
+2017-07-27 16:32:35 INFO  ConnectionListener:45 - Connection from: IN: 127.0.0.1:64403 - OUT: 127.0.0.1:2008
+2017-07-27 16:32:35 INFO  ConnectionListener:49 - LoginManager starting...
+2017-07-27 16:32:35 INFO  ConnectionListener:43 - Waiting incoming connection on 2017
+2017-07-27 16:32:35 DEBUG LoginManager:27 - START: run()
+2017-07-27 16:32:35 INFO  LoginManager:31 - Waiting for user username/password...
+2017-07-27 16:32:40 DEBUG LoginManager:36 - Trying to login with user: test
+2017-07-27 16:32:40 DEBUG LoginManager:41 - Login successful: test
+2017-07-27 16:32:40 DEBUG LoginManager:70 - END: run()
