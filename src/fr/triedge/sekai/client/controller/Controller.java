@@ -1,10 +1,6 @@
 
-package fr.triedge.sekai.client.controller;
+package src.fr.triedge.sekai.client.controller;
 
-import static org.lwjgl.glfw.GLFW.glfwPollEvents;
-import static org.lwjgl.glfw.GLFW.glfwSwapBuffers;
-import static org.lwjgl.glfw.GLFW.glfwTerminate;
-import static org.lwjgl.glfw.GLFW.glfwWindowShouldClose;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,9 +9,9 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import fr.triedge.sekai.common.network.SekaiSession;
-import fr.triedge.sekai.common.network.SekaiSocket;
-import fr.triedge.sekai.common.network.SekaiSocketManager;
+import src.fr.triedge.sekai.common.network.SekaiSession;
+import src.fr.triedge.sekai.common.network.SekaiSocket;
+import src.fr.triedge.sekai.common.network.SekaiSocketManager;
 
 public class Controller {
 	
@@ -63,17 +59,6 @@ public class Controller {
 		
 	}
 	
-	public void startLoop(){
-		while (!glfwWindowShouldClose(getWindow())) {
-			glfwPollEvents();
-			glfwSwapBuffers(getWindow());
-		}
-	}
-	
-	public void close(){
-		glfwTerminate();
-	}
-
 	public long getWindow() {
 		return window;
 	}

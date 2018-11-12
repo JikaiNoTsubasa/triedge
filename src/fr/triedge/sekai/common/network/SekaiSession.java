@@ -1,4 +1,4 @@
-package fr.triedge.sekai.common.network;
+package src.fr.triedge.sekai.common.network;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

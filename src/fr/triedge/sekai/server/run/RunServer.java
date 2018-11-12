@@ -1,6 +1,6 @@
-package fr.triedge.sekai.server.run;
+package src.fr.triedge.sekai.server.run;
 
-import fr.triedge.sekai.server.controller.Controller;
+import src.fr.triedge.sekai.server.controller.Controller;
 
 public class RunServer {
 

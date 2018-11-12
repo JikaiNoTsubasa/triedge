@@ -1,6 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
+//Grade attributes
+group 'fr.triedge'
+version '0.1'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "3.0";
+}
+
 sourceSets {
     main {
         java {
@@ -22,34 +30,65 @@ configurations {
 }
 
 dependencies {
-	extraLibs group: 'com.db4o', name: 'db4o-8.0', version: '8.0'
-	extraLibs group: 'org.apache', name: 'log4j', version: '1.0'
+	extraLibs fileTree(dir: 'lib', include: '*.jar')
 	configurations.compile.extendsFrom(configurations.extraLibs)
 }
 
 task releaseClient(type: Jar){
 	dependsOn compileJava
 	manifest {
-    	attributes 'Main-Class': 'fr.triedge.sekai.client.RunClient'
+    	attributes 'Main-Class': 'src.fr.triedge.sekai.client.run.RunClient'
+    	attributes 'Class-Path': 'libs/log4j.jar libs/litiengine-0.4.13.jar'
     }
     baseName='SekaiClient'
+    destinationDir = file("$rootDir/build/Client")
     from sourceSets.main.output.classesDir
-    include 'fr\\triedge\\sekai\\client\\**'
-    include 'fr\\triedge\\sekai\\common\\**'
-    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    include 'src\\fr\\triedge\\sekai\\client\\**'
+    include 'src\\fr\\triedge\\sekai\\common\\**'
+    
+    copy {
+		from 'lib'
+		into 'build/Client/libs'
+	}
+	copy{
+		from 'client'
+		into 'build/Client/client'
+	}
+	
+    //from configurations.extraLibs.collect { zipTree(it) }
 } 
 
 task releaseServer(type: Jar){
 	dependsOn compileJava
 	manifest {
-    	attributes 'Main-Class': 'fr.triedge.sekai.server.RunServer'
+    	attributes 'Main-Class': 'src.fr.triedge.sekai.server.run.RunServer'
+    	attributes 'Class-Path': 'libs/db4o-8.0.jar libs/log4j.jar'
+    	//attributes 'Class-Path': configurations.extraLibs.collect { it.getName() }.join(' ')
     }
 	baseName='SekaiServer'
+	destinationDir = file("$rootDir/build/Server")
 	from sourceSets.main.output.classesDir
-    include 'fr\\triedge\\sekai\\server\\**'
-	include 'fr\\triedge\\sekai\\common\\**'
-    from configurations.extraLibs.collect { it.isDirectory() ? it : zipTree(it) }
+    include 'src\\fr\\triedge\\sekai\\server\\**'
+	include 'src\\fr\\triedge\\sekai\\common\\**'
+	
+	copy {
+		from 'lib'
+		into 'build/Server/libs'
+	}
+	copy{
+		from 'server'
+		into 'build/Server/server'
+	}
+    //from configurations.extraLibs.collect { zipTree(it) }
 }
+
+jar {
+    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+}
+
+//task listJars {
+//    configurations.extraLibs.each { File file -> println file.name }
+//}
 
 task releaseALL(type: Jar){
 	dependsOn releaseClient

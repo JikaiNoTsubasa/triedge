@@ -1,4 +1,4 @@
-package fr.triedge.sekai.server.controller;
+package src.fr.triedge.sekai.server.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,7 +8,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import fr.triedge.sekai.common.model.Config;
+import src.fr.triedge.sekai.common.model.Config;
 
 public class Controller {
 	

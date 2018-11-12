@@ -1,11 +1,11 @@
-package fr.triedge.sekai.server.controller;
+package src.fr.triedge.sekai.server.controller;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 
-import fr.triedge.sekai.common.model.Charact;
-import fr.triedge.sekai.common.model.User;
+import src.fr.triedge.sekai.common.model.Charact;
+import src.fr.triedge.sekai.common.model.User;
 
 public class DB4O implements Database{
 	

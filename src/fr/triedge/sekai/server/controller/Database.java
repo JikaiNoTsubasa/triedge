@@ -1,6 +1,6 @@
-package fr.triedge.sekai.server.controller;
+package src.fr.triedge.sekai.server.controller;
 
-import fr.triedge.sekai.common.model.User;
+import src.fr.triedge.sekai.common.model.User;
 
 public interface Database {
 

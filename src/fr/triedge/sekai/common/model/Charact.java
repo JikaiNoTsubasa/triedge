@@ -1,4 +1,4 @@
-package fr.triedge.sekai.common.model;
+package src.fr.triedge.sekai.common.model;
 
 public class Charact {
 
