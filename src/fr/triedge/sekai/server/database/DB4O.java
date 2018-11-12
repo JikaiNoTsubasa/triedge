@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.server.controller;
+package src.fr.triedge.sekai.server.database;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;

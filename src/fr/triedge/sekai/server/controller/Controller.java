@@ -3,18 +3,23 @@ package src.fr.triedge.sekai.server.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import src.fr.triedge.sekai.common.model.Config;
+import src.fr.triedge.sekai.server.database.DatabaseManagement;
+import src.fr.triedge.sekai.server.database.JDBC;
+import src.fr.triedge.sekai.server.model.DatabaseInfo;
 
 public class Controller {
 	
 	static final Logger log = Logger.getLogger(Controller.class);
 	
-	private DB4O database;
+	//private DB4O database;
+	private DatabaseManagement db;
 	private ConnectionListener connectionListener;
 	
 	public static final String DEFAULT_CONF_PATH				= "server/config/server.properties";
@@ -65,14 +70,35 @@ public class Controller {
 	private void initDatabase(){
 		// Load database
 		log.debug("START: initDatabase()");
-		setDatabase(new DB4O());
-		getDatabase().open(DEFAULT_DB_PATH);
+		DatabaseInfo info = new DatabaseInfo(
+				Config.param.getProperty("db.host"),
+				Config.param.getProperty("db.user"), 
+				Config.param.getProperty("db.password"), 
+				Config.param.getProperty("db.name"), 
+				Integer.valueOf(Config.param.getProperty("db.port"))
+				);
+		
+		try {
+			db = new DatabaseManagement(JDBC.connect(info));
+		} catch (SQLException e) {
+			log.error("Cannot contact database with Info: "+info, e);
+			System.exit(-1);
+		}
+		
+		//setDatabase(new DB4O());
+		//getDatabase().open(DEFAULT_DB_PATH);
 		log.debug("END: initDatabase()");
 	}
 	
 	public void closeDatabase(){
 		log.debug("START: closeDatabase()");
-		getDatabase().close();
+		if (db != null) {
+			try {
+				db.disconnect();
+			} catch (SQLException e) {
+				log.error("Cannot close databasee", e);
+			}
+		}
 		log.debug("END: closeDatabase()");
 	}
 
@@ -88,11 +114,13 @@ public class Controller {
 		}
 	}
 
-	public DB4O getDatabase() {
-		return database;
+	public DatabaseManagement getDB() {
+		return db;
 	}
 
-	public void setDatabase(DB4O database) {
-		this.database = database;
+	public void setDB(DatabaseManagement db) {
+		this.db = db;
 	}
+
+	
 }

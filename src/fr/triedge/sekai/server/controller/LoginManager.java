@@ -35,13 +35,13 @@ public class LoginManager implements Runnable{
 					String user = mes_user.getParams().get("login").toString();
 					String pwd = mes_user.getParams().get("password").toString();
 					log.debug("Trying to login with user: "+user);
-					boolean userExists = getServer().getDatabase().userExists(user, pwd);
+					boolean userExists = getServer().getDB().userExists(user, pwd);
 					SekaiMessage ans_user;
 					if (userExists){
 						ans_user = SekaiMessageFactory.createMesLoginSuccessful(null);
 						log.debug("Login successful: "+user);
 						log.debug("Sending user's characters");
-						User user_obj = getServer().getDatabase().getUser(user, pwd);
+						User user_obj = getServer().getDB().getUser(user, pwd);
 						ans_user.getParams().put(user_obj.getCharact().getName(), user_obj.getCharact().getName());
 						session.respondToMessage(ans_user);
 						SekaiMessage mes_char = session.receiveMessage();
@@ -49,7 +49,7 @@ public class LoginManager implements Runnable{
 							
 						}else if (mes_char.code == SekaiProtocol.CLIENT_ASK_CREATE_CHAR){
 							String username = mes_char.getParams().get("user").toString();
-							getServer().getDatabase().createCharact(user_obj, username);
+							getServer().getDB().createCharact(user_obj, username);
 						}
 						//TODO - send response with char info
 					}else{
@@ -63,7 +63,7 @@ public class LoginManager implements Runnable{
 					String user = mes_user.getParams().get("login").toString();
 					String pwd = mes_user.getParams().get("password").toString();
 					log.debug("Trying create user: "+user);
-					boolean userExists = getServer().getDatabase().createUser(user,pwd);
+					boolean userExists = getServer().getDB().createUser(user,pwd);
 					SekaiMessage ans_user;
 					if (userExists){
 						ans_user = SekaiMessageFactory.createMesCreateUserSuccessful(null);

@@ -62,7 +62,7 @@ task releaseServer(type: Jar){
 	dependsOn compileJava
 	manifest {
     	attributes 'Main-Class': 'src.fr.triedge.sekai.server.run.RunServer'
-    	attributes 'Class-Path': 'libs/db4o-8.0.jar libs/log4j.jar'
+    	attributes 'Class-Path': 'libs/db4o-8.0.jar libs/log4j.jar libs/mysql-connector-java-8.0.13.jar'
     	//attributes 'Class-Path': configurations.extraLibs.collect { it.getName() }.join(' ')
     }
 	baseName='SekaiServer'
