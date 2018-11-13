@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.User;
+import src.fr.triedge.sekai.common.model.Account;
 import src.fr.triedge.sekai.common.network.SekaiMessage;
 import src.fr.triedge.sekai.common.network.SekaiMessageFactory;
 import src.fr.triedge.sekai.common.network.SekaiProtocol;
@@ -41,8 +41,8 @@ public class LoginManager implements Runnable{
 						ans_user = SekaiMessageFactory.createMesLoginSuccessful(null);
 						log.debug("Login successful: "+user);
 						log.debug("Sending user's characters");
-						User user_obj = getServer().getDB().getUser(user, pwd);
-						ans_user.getParams().put(user_obj.getCharact().getName(), user_obj.getCharact().getName());
+						Account user_obj = getServer().getDB().getUser(user, pwd);
+						user_obj.getCharacters().forEach((ch) -> ans_user.getParams().put(ch.getName(), ch.getName()));
 						session.respondToMessage(ans_user);
 						SekaiMessage mes_char = session.receiveMessage();
 						if (mes_char.code == SekaiProtocol.CLIENT_ASK_SELECT_CHAR){

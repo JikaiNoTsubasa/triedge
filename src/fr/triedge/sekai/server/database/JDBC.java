@@ -11,7 +11,7 @@ import src.fr.triedge.sekai.server.model.DatabaseInfo;
 public class JDBC{
 
 	public static Connection connect(DatabaseInfo info) throws SQLException {
-		return DriverManager.getConnection("jdbc:mysql://"+info.getHost()+":"+info.getPort()+"/"+info.getName()+"?user="+info.getUser()+"&password="+info.getPassword());
+		return DriverManager.getConnection("jdbc:mysql://"+info.getHost()+":"+info.getPort()+"/"+info.getName()+"?user="+info.getUser()+"&password="+info.getPassword()+"&serverTimezone=UTC");
 	}
 	
 	public static ResultSet query(Connection db, String sql) throws SQLException {

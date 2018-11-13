@@ -3,11 +3,13 @@ package src.fr.triedge.sekai.server.database;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
 import src.fr.triedge.sekai.common.model.Charact;
-import src.fr.triedge.sekai.common.model.User;
+import src.fr.triedge.sekai.common.model.Item;
+import src.fr.triedge.sekai.common.model.Account;
 
 
 public class DatabaseManagement {
@@ -43,17 +45,16 @@ public class DatabaseManagement {
 		}
 		return false;
 	}
-
-	public User getUser(String user, String pwd) {
+	public Account getUser(String user, String pwd) {
 		try {
 			ResultSet set = JDBC.query(getConnection(), "select * from sk_account left join sk_character on character_id=account_character where account_user="+user+" and account_password="+pwd);
-			User usr = new User();
+			Account usr = new Account();
 			while(set.next()) {
 				Charact charact = new Charact();
 				charact.setName("character_name");
 				usr.setId(set.getInt("account_id"));
 				usr.setName(set.getString("account_name"));
-				usr.setCharact(charact);
+				usr.getCharacters().add(charact);
 			}
 			
 			
@@ -62,8 +63,8 @@ public class DatabaseManagement {
 		}
 		return null;
 	}
-
-	public void createCharact(User user_obj, String username) {
+	
+	public void createCharact(Account user_obj, String username) {
 		String sql = "insert into sk_character(character_name, character_account) values ('"+username+"',"+user_obj.getId()+")";
 		
 		try {
@@ -85,5 +86,62 @@ public class DatabaseManagement {
 		return false;
 	}
 	
+	public ArrayList<Account> getAllUsers(){
+		ArrayList<Account> accounts = new ArrayList<>();
+		String sql = "select * from sk_account";
+		
+		try {
+			ResultSet set = JDBC.query(getConnection(), sql);
+			while(set.next()) {
+				Account account = new Account();
+				account.setId(set.getInt("account_id"));
+				account.setName(set.getString("account_name"));
+				account.setPassword(set.getString("account_password"));
+				accounts.add(account);
+				log.debug("# Loaded Account: "+account);
+				
+				String sqlChar = "select * from sk_character where character_account="+account.getId();
+				ResultSet setChar = JDBC.query(getConnection(), sqlChar);
+				while(setChar.next()) {
+					Charact ch = new Charact();
+					ch.setName(setChar.getString("character_name"));
+					ch.id = setChar.getInt("character_id");
+					ch.level = setChar.getInt("character_level");
+					ch.x = setChar.getFloat("character_x");
+					ch.y = setChar.getFloat("character_y");
+					account.getCharacters().add(ch);
+					log.debug("# -> Loaded Character: "+ch);
+				}
+			}
+		} catch (SQLException e) {
+			log.error("Cannot execute SQL", e);
+			return null;
+		}
+		
+		return accounts;
+	}
 	
+	public ArrayList<Item> getAllItems(){
+		ArrayList<Item> items = new ArrayList<>();
+		String sql = "select * from sk_item";
+		try {
+			ResultSet set = JDBC.query(getConnection(), sql);
+			while (set.next()) {
+				Item item = new Item();
+				item.setId(set.getInt("item_id"));
+				item.setName(set.getString("item_name"));
+				item.setDesc(set.getString("item_desc"));
+				item.setGrade(set.getString("item_grade"));
+				item.setAtk(set.getInt("item_atk"));
+				item.setMatk(set.getInt("item_matk"));
+				item.setDef(set.getInt("item_def"));
+				item.setMdef(set.getInt("item_mdef"));
+				log.debug("# Loaded Item: "+item);
+			}
+		} catch (SQLException e) {
+			log.error("Cannot execute SQL", e);
+			return null;
+		}
+		return items;
+	}
 }

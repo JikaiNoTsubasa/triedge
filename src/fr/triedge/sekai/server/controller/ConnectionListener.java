@@ -40,7 +40,7 @@ public class ConnectionListener implements Runnable{
 		int port = Integer.parseInt(Config.param.getProperty("server.client.port", "2017"));
 		while (isRunning()) {
 			try {
-				log.info("Waiting incoming connection on "+port);
+				log.info("Waiting incoming connections on "+port);
 				SekaiSession session = SekaiSocketManager.getSession(SekaiSocketManager.receiveSekaiSocket(port));
 				log.info("Connection from: "+session.getSekaiSocket().toString());
 				if (session != null){

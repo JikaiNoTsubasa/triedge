@@ -10,7 +10,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import src.fr.triedge.sekai.common.model.Config;
+import src.fr.triedge.sekai.common.model.Model;
 import src.fr.triedge.sekai.server.database.DatabaseManagement;
+import src.fr.triedge.sekai.server.database.DatabaseModelLoader;
 import src.fr.triedge.sekai.server.database.JDBC;
 import src.fr.triedge.sekai.server.model.DatabaseInfo;
 
@@ -21,6 +23,7 @@ public class Controller {
 	//private DB4O database;
 	private DatabaseManagement db;
 	private ConnectionListener connectionListener;
+	private Model model;
 	
 	public static final String DEFAULT_CONF_PATH				= "server/config/server.properties";
 	public static final String DEFAULT_DB_PATH					= "server/data/Sekai.db";
@@ -36,6 +39,9 @@ public class Controller {
 		initDatabase();
 		log.info("Database loaded");
 		
+		initModel();
+		log.info("Model loaded");
+		
 		log.info("Starting Connection Listener...");
 		initConnectionListener();
 		
@@ -45,6 +51,12 @@ public class Controller {
 		log.debug("END: init()");
 	}
 	
+	private void initModel() {
+		log.debug("START: initModel()");
+		setModel(DatabaseModelLoader.loadModel(db));
+		log.debug("END: initModel()");
+	}
+
 	private void initConnectionListener() {
 		log.debug("START: initConnectionListener()");
 		connectionListener = new ConnectionListener(this);
@@ -120,6 +132,14 @@ public class Controller {
 
 	public void setDB(DatabaseManagement db) {
 		this.db = db;
+	}
+
+	public Model getModel() {
+		return model;
+	}
+
+	public void setModel(Model model) {
+		this.model = model;
 	}
 
 	

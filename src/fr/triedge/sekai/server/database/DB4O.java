@@ -5,7 +5,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 
 import src.fr.triedge.sekai.common.model.Charact;
-import src.fr.triedge.sekai.common.model.User;
+import src.fr.triedge.sekai.common.model.Account;
 
 public class DB4O implements Database{
 	
@@ -21,10 +21,10 @@ public class DB4O implements Database{
 
 	@Override
 	public boolean userExists(String username, String password) {
-		User user = new User();
+		Account user = new Account();
 		user.setName(username);
 		user.setPassword(password);
-		ObjectSet<User> res = db.queryByExample(user);
+		ObjectSet<Account> res = db.queryByExample(user);
 		if (res.isEmpty())
 			return false;
 		else
@@ -33,15 +33,15 @@ public class DB4O implements Database{
 
 	@Override
 	public boolean createUser(String username, String password) {
-		User user = new User();
+		Account user = new Account();
 		user.setName(username);
 		user.setPassword(password);
 		
 		// Get last id
 		int lastId = 0;
-		ObjectSet<User> users = db.query(User.class);
+		ObjectSet<Account> users = db.query(Account.class);
 		if (!users.isEmpty()){
-			for (User us : users){
+			for (Account us : users){
 				if (us.getId() > lastId)
 					lastId = us.getId();
 			}
@@ -49,7 +49,7 @@ public class DB4O implements Database{
 		user.setId(++lastId);
 		db.store(user);
 		db.commit();
-		ObjectSet<User> usr = db.queryByExample(user);
+		ObjectSet<Account> usr = db.queryByExample(user);
 		if (usr.isEmpty())
 			return false;
 		else
@@ -57,18 +57,18 @@ public class DB4O implements Database{
 	}
 
 	@Override
-	public User getUser(String username, String password) {
-		User user = new User();
+	public Account getUser(String username, String password) {
+		Account user = new Account();
 		user.setName(username);
 		user.setPassword(password);
-		ObjectSet<User> res = db.queryByExample(user);
+		ObjectSet<Account> res = db.queryByExample(user);
 		if (res.isEmpty())
 			return null;
 		return res.get(0);
 	}
 
 	@Override
-	public boolean createCharact(User user, String username) {
+	public boolean createCharact(Account user, String username) {
 		Charact charact = new Charact();
 		charact.setName(username);
 		//user.getCharacters().add(charact);
@@ -81,9 +81,9 @@ public class DB4O implements Database{
 	@Override
 	public int getLastIdUser() {
 		int lastId = 0;
-		ObjectSet<User> users = db.query(User.class);
+		ObjectSet<Account> users = db.query(Account.class);
 		if (!users.isEmpty()){
-			for (User us : users){
+			for (Account us : users){
 				if (us.id > lastId)
 					lastId = us.id;
 			}
