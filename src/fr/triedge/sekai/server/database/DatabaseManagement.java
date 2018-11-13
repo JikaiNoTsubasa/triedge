@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 
 import src.fr.triedge.sekai.common.model.Charact;
 import src.fr.triedge.sekai.common.model.Item;
+import src.fr.triedge.sekai.common.model.Npc;
 import src.fr.triedge.sekai.common.model.Account;
 
 
@@ -109,6 +110,7 @@ public class DatabaseManagement {
 					ch.level = setChar.getInt("character_level");
 					ch.x = setChar.getFloat("character_x");
 					ch.y = setChar.getFloat("character_y");
+					ch.speed = setChar.getFloat("character_speed");
 					account.getCharacters().add(ch);
 					log.debug("# -> Loaded Character: "+ch);
 				}
@@ -136,6 +138,7 @@ public class DatabaseManagement {
 				item.setMatk(set.getInt("item_matk"));
 				item.setDef(set.getInt("item_def"));
 				item.setMdef(set.getInt("item_mdef"));
+				items.add(item);
 				log.debug("# Loaded Item: "+item);
 			}
 		} catch (SQLException e) {
@@ -143,5 +146,27 @@ public class DatabaseManagement {
 			return null;
 		}
 		return items;
+	}
+
+	public ArrayList<Npc> getAllNPC() {
+		ArrayList<Npc> npcs = new ArrayList<>();
+		String sql = "select * from sk_npc left join sk_type on npc_type=type_id";
+		try {
+			ResultSet set = JDBC.query(getConnection(), sql);
+			while (set.next()) {
+				Npc npc = new Npc();
+				npc.id = set.getInt("npc_id");
+				npc.speed = set.getFloat("npc_speed");
+				npc.setName(set.getString("npc_name"));
+				npc.level = set.getInt("npc_level");
+				npc.setType(set.getString("type_name"));
+				npcs.add(npc);
+				log.debug("# Loaded Item: "+npc);
+			}
+		} catch (SQLException e) {
+			log.error("Cannot execute SQL", e);
+			return null;
+		}
+		return npcs;
 	}
 }

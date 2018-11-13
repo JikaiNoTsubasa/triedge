@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import de.gurkenlabs.litiengine.Game;
 import src.fr.triedge.sekai.client.ui.LoginDialog;
 import src.fr.triedge.sekai.common.model.Config;
 import src.fr.triedge.sekai.common.network.SekaiMessage;

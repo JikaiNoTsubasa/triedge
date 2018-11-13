@@ -4,26 +4,35 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+import src.fr.triedge.sekai.common.model.Charact;
 import src.fr.triedge.sekai.common.model.Config;
 import src.fr.triedge.sekai.common.model.Model;
+import src.fr.triedge.sekai.common.network.SekaiSession;
 import src.fr.triedge.sekai.server.database.DatabaseManagement;
 import src.fr.triedge.sekai.server.database.DatabaseModelLoader;
 import src.fr.triedge.sekai.server.database.JDBC;
 import src.fr.triedge.sekai.server.model.DatabaseInfo;
+import src.fr.triedge.sekai.server.utils.Utils;
 
 public class Controller {
 	
 	static final Logger log = Logger.getLogger(Controller.class);
 	
+	//FIXME - Scheduler that checks online chars and update DB, also remove online from db when disconnected
+	
 	//private DB4O database;
 	private DatabaseManagement db;
 	private ConnectionListener connectionListener;
 	private Model model;
+	private Engine engine;
+	private List<ServerDelegate> delegates = new ArrayList<>();
 	
 	public static final String DEFAULT_CONF_PATH				= "server/config/server.properties";
 	public static final String DEFAULT_DB_PATH					= "server/data/Sekai.db";
@@ -45,12 +54,23 @@ public class Controller {
 		log.info("Starting Connection Listener...");
 		initConnectionListener();
 		
+		log.info("Starting Engine...");
+		initEngine();
 		
 		log.info("Server Done");
 		
 		log.debug("END: init()");
 	}
 	
+	private void initEngine() {
+		log.debug("START: initEngine()");
+		setEngine(new Engine(this));
+		Thread th = new Thread(getEngine());
+		th.setName("Engine");
+		th.start();
+		log.debug("END: initEngine()");
+	}
+
 	private void initModel() {
 		log.debug("START: initModel()");
 		setModel(DatabaseModelLoader.loadModel(db));
@@ -140,6 +160,44 @@ public class Controller {
 
 	public void setModel(Model model) {
 		this.model = model;
+	}
+
+	/**
+	 * Instantiates the character into the game and creates the server delegate
+	 * for the user's session
+	 * @param id
+	 * @param session
+	 */
+	public void loginCharacter(int id, SekaiSession session) {
+		log.debug("START: loginCharacter()");
+		Charact ch = Utils.getCharacterByIDFromAccount(getModel().getAccounts(), id);
+		getModel().getOnlineCharacters().add(ch);
+		log.debug("Character "+ch+" added to Online list");
+		
+		ServerDelegate del = new ServerDelegate(ch, this, session);
+		getDelegates().add(del);
+		log.debug("Created ServerDelegate for character "+ch);
+		
+		Thread th = new Thread(del);
+		th.setName(ch.getName());
+		th.start();
+		log.debug("END: loginCharacter()");
+	}
+
+	public List<ServerDelegate> getDelegates() {
+		return delegates;
+	}
+
+	public void setDelegates(List<ServerDelegate> delegates) {
+		this.delegates = delegates;
+	}
+
+	public Engine getEngine() {
+		return engine;
+	}
+
+	public void setEngine(Engine engine) {
+		this.engine = engine;
 	}
 
 	

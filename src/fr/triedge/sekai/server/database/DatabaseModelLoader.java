@@ -1,12 +1,14 @@
 package src.fr.triedge.sekai.server.database;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.apache.log4j.Logger;
 
 import src.fr.triedge.sekai.common.model.Account;
 import src.fr.triedge.sekai.common.model.Item;
 import src.fr.triedge.sekai.common.model.Model;
+import src.fr.triedge.sekai.common.model.Npc;
 
 public class DatabaseModelLoader {
 	
@@ -25,7 +27,7 @@ public class DatabaseModelLoader {
 			log.error("Accounts are null, exiting");
 			System.exit(-1);
 		}
-		model.setAccounts(accounts);
+		model.setAccounts(Collections.synchronizedList(accounts));
 		
 		// Load items
 		log.debug("###############################################################");
@@ -36,7 +38,18 @@ public class DatabaseModelLoader {
 			log.error("Items are null, exiting");
 			System.exit(-1);
 		}
-		model.setItems(items);
+		model.setItems(Collections.synchronizedList(items));
+		
+		// Load npc
+		log.debug("###############################################################");
+		log.debug("# npc                                                         #");
+		log.debug("###############################################################");
+		ArrayList<Npc> npcs = db.getAllNPC();
+		if (npcs == null) {
+			log.error("Npcs are null, exiting");
+			System.exit(-1);
+		}
+		model.setNpcs(Collections.synchronizedList(npcs));
 		
 		return model;
 	}

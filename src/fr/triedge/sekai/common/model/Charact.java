@@ -2,7 +2,7 @@ package src.fr.triedge.sekai.common.model;
 
 public class Charact {
 
-	public float x,y;
+	public float x,y,speed;
 	public int level = 1, id;
 	private String name;
 	private boolean online;

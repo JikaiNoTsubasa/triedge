@@ -46,6 +46,9 @@ public class LoginManager implements Runnable{
 						session.respondToMessage(ans_user);
 						SekaiMessage mes_char = session.receiveMessage();
 						if (mes_char.code == SekaiProtocol.CLIENT_ASK_SELECT_CHAR){
+							//TODO - login character
+							int id = Integer.parseInt(mes_char.getParams().get("id").toString());
+							getServer().loginCharacter(id, session);
 							
 						}else if (mes_char.code == SekaiProtocol.CLIENT_ASK_CREATE_CHAR){
 							String username = mes_char.getParams().get("user").toString();

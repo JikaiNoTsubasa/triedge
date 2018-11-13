@@ -15,4 +15,6 @@ public class SekaiProtocol {
 	public static final int CLIENT_ASK_CREATE_USER										= 102;
 	public static final int CLIENT_ASK_SELECT_CHAR										= 103;
 	public static final int CLIENT_ASK_CREATE_CHAR										= 104;
+	
+	public static final int CLIENT_ASK_MOVE												= 200;
 }
