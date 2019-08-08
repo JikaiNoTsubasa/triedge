@@ -1,14 +1,14 @@
-package src.fr.triedge.sekai.server.database;
+package fr.triedge.sekai.server.database;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.Account;
-import src.fr.triedge.sekai.common.model.Item;
-import src.fr.triedge.sekai.common.model.Model;
-import src.fr.triedge.sekai.common.model.Npc;
+import fr.triedge.sekai.common.model.Account;
+import fr.triedge.sekai.common.model.Item;
+import fr.triedge.sekai.common.model.Model;
+import fr.triedge.sekai.common.model.Npc;
 
 public class DatabaseModelLoader {
 	

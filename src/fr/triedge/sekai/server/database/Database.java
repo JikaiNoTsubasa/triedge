@@ -1,6 +1,6 @@
-package src.fr.triedge.sekai.server.database;
+package fr.triedge.sekai.server.database;
 
-import src.fr.triedge.sekai.common.model.Account;
+import fr.triedge.sekai.common.model.Account;
 
 public interface Database {
 

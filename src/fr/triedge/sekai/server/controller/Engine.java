@@ -1,9 +1,9 @@
-package src.fr.triedge.sekai.server.controller;
+package fr.triedge.sekai.server.controller;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.Charact;
-import src.fr.triedge.sekai.common.model.Config;
+import fr.triedge.sekai.common.model.Charact;
+import fr.triedge.sekai.common.model.Config;
 
 public class Engine implements Runnable{
 	

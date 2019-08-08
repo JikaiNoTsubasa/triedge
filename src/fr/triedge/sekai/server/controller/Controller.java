@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.server.controller;
+package fr.triedge.sekai.server.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,15 +11,15 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import src.fr.triedge.sekai.common.model.Charact;
-import src.fr.triedge.sekai.common.model.Config;
-import src.fr.triedge.sekai.common.model.Model;
-import src.fr.triedge.sekai.common.network.SekaiSession;
-import src.fr.triedge.sekai.server.database.DatabaseManagement;
-import src.fr.triedge.sekai.server.database.DatabaseModelLoader;
-import src.fr.triedge.sekai.server.database.JDBC;
-import src.fr.triedge.sekai.server.model.DatabaseInfo;
-import src.fr.triedge.sekai.server.utils.Utils;
+import fr.triedge.sekai.common.model.Charact;
+import fr.triedge.sekai.common.model.Config;
+import fr.triedge.sekai.common.model.Model;
+import fr.triedge.sekai.common.network.SekaiSession;
+import fr.triedge.sekai.server.database.DatabaseManagement;
+import fr.triedge.sekai.server.database.DatabaseModelLoader;
+import fr.triedge.sekai.server.database.JDBC;
+import fr.triedge.sekai.server.model.DatabaseInfo;
+import fr.triedge.sekai.server.utils.Utils;
 
 public class Controller {
 	

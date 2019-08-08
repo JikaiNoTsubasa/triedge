@@ -1,14 +1,14 @@
-package src.fr.triedge.sekai.server.controller;
+package fr.triedge.sekai.server.controller;
 
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.Account;
-import src.fr.triedge.sekai.common.network.SekaiMessage;
-import src.fr.triedge.sekai.common.network.SekaiMessageFactory;
-import src.fr.triedge.sekai.common.network.SekaiProtocol;
-import src.fr.triedge.sekai.common.network.SekaiSession;
+import fr.triedge.sekai.common.model.Account;
+import fr.triedge.sekai.common.network.SekaiMessage;
+import fr.triedge.sekai.common.network.SekaiMessageFactory;
+import fr.triedge.sekai.common.network.SekaiProtocol;
+import fr.triedge.sekai.common.network.SekaiSession;
 
 public class LoginManager implements Runnable{
 

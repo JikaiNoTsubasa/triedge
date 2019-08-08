@@ -1,12 +1,12 @@
-package src.fr.triedge.sekai.server.controller;
+package fr.triedge.sekai.server.controller;
 
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.Config;
-import src.fr.triedge.sekai.common.network.SekaiSession;
-import src.fr.triedge.sekai.common.network.SekaiSocketManager;
+import fr.triedge.sekai.common.model.Config;
+import fr.triedge.sekai.common.network.SekaiSession;
+import fr.triedge.sekai.common.network.SekaiSocketManager;
 
 public class ConnectionListener implements Runnable{
 

@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.server.database;
+package fr.triedge.sekai.server.database;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.Charact;
-import src.fr.triedge.sekai.common.model.Item;
-import src.fr.triedge.sekai.common.model.Npc;
-import src.fr.triedge.sekai.common.model.Account;
+import fr.triedge.sekai.common.model.Charact;
+import fr.triedge.sekai.common.model.Item;
+import fr.triedge.sekai.common.model.Npc;
+import fr.triedge.sekai.common.model.Account;
 
 
 public class DatabaseManagement {

@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.common.model;
+package fr.triedge.sekai.common.model;
 
 import java.util.Properties;
 

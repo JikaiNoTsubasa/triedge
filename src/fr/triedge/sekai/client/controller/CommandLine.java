@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.client.controller;
+package fr.triedge.sekai.client.controller;
 
 import java.io.IOException;
 import java.util.Map.Entry;
@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.network.SekaiMessage;
-import src.fr.triedge.sekai.common.network.SekaiMessageFactory;
-import src.fr.triedge.sekai.common.network.SekaiProtocol;
-import src.fr.triedge.sekai.common.network.SekaiSession;
+import fr.triedge.sekai.common.network.SekaiMessage;
+import fr.triedge.sekai.common.network.SekaiMessageFactory;
+import fr.triedge.sekai.common.network.SekaiProtocol;
+import fr.triedge.sekai.common.network.SekaiSession;
 
 public class CommandLine implements Runnable{
 

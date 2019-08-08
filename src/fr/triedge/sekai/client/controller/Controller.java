@@ -1,5 +1,5 @@
 
-package src.fr.triedge.sekai.client.controller;
+package fr.triedge.sekai.client.controller;
 
 
 import java.io.File;
@@ -12,14 +12,14 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
 import de.gurkenlabs.litiengine.Game;
-import src.fr.triedge.sekai.client.ui.LoginDialog;
-import src.fr.triedge.sekai.common.model.Config;
-import src.fr.triedge.sekai.common.network.SekaiMessage;
-import src.fr.triedge.sekai.common.network.SekaiMessageFactory;
-import src.fr.triedge.sekai.common.network.SekaiProtocol;
-import src.fr.triedge.sekai.common.network.SekaiSession;
-import src.fr.triedge.sekai.common.network.SekaiSocket;
-import src.fr.triedge.sekai.common.network.SekaiSocketManager;
+import fr.triedge.sekai.client.ui.LoginDialog;
+import fr.triedge.sekai.common.model.Config;
+import fr.triedge.sekai.common.network.SekaiMessage;
+import fr.triedge.sekai.common.network.SekaiMessageFactory;
+import fr.triedge.sekai.common.network.SekaiProtocol;
+import fr.triedge.sekai.common.network.SekaiSession;
+import fr.triedge.sekai.common.network.SekaiSocket;
+import fr.triedge.sekai.common.network.SekaiSocketManager;
 
 public class Controller {
 	

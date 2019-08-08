@@ -1,7 +1,7 @@
 
-package src.fr.triedge.sekai.client.run;
+package fr.triedge.sekai.client.run;
 
-import src.fr.triedge.sekai.client.controller.Controller;
+import fr.triedge.sekai.client.controller.Controller;
 
 public class RunClient {
 

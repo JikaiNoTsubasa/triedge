@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.server.model;
+package fr.triedge.sekai.server.model;
 
 public class DatabaseInfo {
 

@@ -1,10 +1,10 @@
-package src.fr.triedge.sekai.server.utils;
+package fr.triedge.sekai.server.utils;
 
 import java.util.Iterator;
 import java.util.List;
 
-import src.fr.triedge.sekai.common.model.Account;
-import src.fr.triedge.sekai.common.model.Charact;
+import fr.triedge.sekai.common.model.Account;
+import fr.triedge.sekai.common.model.Charact;
 
 public class Utils {
 

@@ -1,14 +1,14 @@
-package src.fr.triedge.sekai.server.controller;
+package fr.triedge.sekai.server.controller;
 
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
 
-import src.fr.triedge.sekai.common.model.Charact;
-import src.fr.triedge.sekai.common.network.SekaiMessage;
-import src.fr.triedge.sekai.common.network.SekaiProtocol;
-import src.fr.triedge.sekai.common.network.SekaiSession;
-import src.fr.triedge.sekai.server.model.ClientInputs;
+import fr.triedge.sekai.common.model.Charact;
+import fr.triedge.sekai.common.network.SekaiMessage;
+import fr.triedge.sekai.common.network.SekaiProtocol;
+import fr.triedge.sekai.common.network.SekaiSession;
+import fr.triedge.sekai.server.model.ClientInputs;
 
 public class ServerDelegate implements Runnable{
 	

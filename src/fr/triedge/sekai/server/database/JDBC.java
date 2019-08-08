@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.server.database;
+package fr.triedge.sekai.server.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import src.fr.triedge.sekai.server.model.DatabaseInfo;
+import fr.triedge.sekai.server.model.DatabaseInfo;
 
 public class JDBC{
 

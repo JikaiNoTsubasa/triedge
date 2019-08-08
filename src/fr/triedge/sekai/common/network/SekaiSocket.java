@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.common.network;
+package fr.triedge.sekai.common.network;
 
 import java.net.Socket;
 

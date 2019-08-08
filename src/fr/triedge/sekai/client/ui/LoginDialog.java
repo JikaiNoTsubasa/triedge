@@ -1,4 +1,4 @@
-package src.fr.triedge.sekai.client.ui;
+package fr.triedge.sekai.client.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -16,7 +16,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import src.fr.triedge.sekai.client.controller.Controller;
+import fr.triedge.sekai.client.controller.Controller;
 
 @SuppressWarnings("serial")
 public class LoginDialog extends JDialog{

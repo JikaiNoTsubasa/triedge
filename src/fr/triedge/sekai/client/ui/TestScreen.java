@@ -1,19 +1,12 @@
-package src.fr.triedge.sekai.client.ui;
-
-import java.awt.event.KeyEvent;
+package fr.triedge.sekai.client.ui;
 
 import de.gurkenlabs.litiengine.Game;
 import de.gurkenlabs.litiengine.entities.CombatEntity;
 import de.gurkenlabs.litiengine.environment.Environment;
-import de.gurkenlabs.litiengine.graphics.PositionLockCamera;
-import de.gurkenlabs.litiengine.graphics.Spritesheet;
-import de.gurkenlabs.litiengine.graphics.animation.Animation;
-import de.gurkenlabs.litiengine.graphics.animation.AnimationController;
 import de.gurkenlabs.litiengine.graphics.emitters.xml.CustomEmitter;
 import de.gurkenlabs.litiengine.gui.screens.GameScreen;
 import de.gurkenlabs.litiengine.input.Gamepad;
 import de.gurkenlabs.litiengine.input.Input;
-import de.gurkenlabs.litiengine.input.KeyboardEntityController;
 
 public class TestScreen {
 
